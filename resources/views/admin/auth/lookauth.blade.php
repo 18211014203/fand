@@ -4,6 +4,7 @@
         <div class="result_wrap" style="width:1024px;margin:60px 0px 50px 200px">
             <div class="result_content">
             <h1>权限总览</h1>
+            <p style="color: red">注意:请不要随意更改本表路由</p>
                 <table class="list_tab">
                     <tr>                     
                         <th>权限名</th>

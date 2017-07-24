@@ -67,12 +67,6 @@ class AdminController extends Controller
     {
          $data=$request->except('_token');
 
-         // $user=DB::table('admin')->where('adminname',$data['adminname'])->first();
-
-         // if(!empty($user)){
-         //    return back()->with('errors','该账户以被注册!');
-         // }
-
          //管理员密码加密哈希
          $data['password']=Hash::make($data['password']);
 
@@ -101,22 +95,12 @@ class AdminController extends Controller
     public function getAdmindelete($id)
     {
 
-
-      //获取用户数据
-      $num=DB::table('admin')->where('id',$id)->get();
-
-      //获取用户角色数据
-      $jnum=DB::table('admin_jiaose')->where('admin_id',$id)->get();
-
-      //删除相关数据
+    
       //删除用户表
       DB::table('admin')->where('id',$id)->delete();
 
       //删除用户角色
-      $a=DB::table('admin_jiaose')->where('admin_id',$id)->delete();
-
-      //删除用户角色权限数据
-      DB::table('jiaose_auth')->where('jiaose_id',$jnum['jiaose_id'])->delete();
+      DB::table('admin_jiaose')->where('admin_id',$id)->delete();
 
       return redirect('/admin/admin/admin');
     }
@@ -325,13 +309,6 @@ class AdminController extends Controller
 
     return view('admin.auth.lookauth',compact('data'));
   }
-
-
-
-
-
-
-
 
   
     //接收页面的ajax

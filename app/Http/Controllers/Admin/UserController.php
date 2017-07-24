@@ -16,8 +16,9 @@ class UserController extends Controller
 
 
         //获取所有用户
-        $user = DB::table('user')->paginate(5);
-
+        // $user = DB::table('user')->paginate(5);
+        $user = DB::table('user')->join('user_detail','user.uid','=','user_detail.uid')->paginate(5);
+        
         return view('admin.user.user',compact('user'));
    }
 
@@ -290,17 +291,18 @@ class UserController extends Controller
     //接收ajax
     public function getOld()
     {
-      $data=$_GET;
-      
-      $user=DB::table('admin')->where('id',$data['id'])->first();
 
+      $data=$_GET;
+
+      $user=DB::table('admin')->where('id',$data['id'])->first();
 
       //解析哈希密码
       $hashpassword=Hash::Check($data['oldpassword'],$user['password']);
-
+      
       if($data['oldpassword']=='')
         {
-          echo '旧密码能为空!';
+          echo '旧密码不能为空!';
+          
         }
 
       if(!empty($data['oldpassword']) && $hashpassword==flase)

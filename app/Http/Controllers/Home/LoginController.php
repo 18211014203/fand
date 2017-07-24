@@ -80,7 +80,7 @@ class LoginController extends Controller
 
           session(['user'=>$user]);
           
-          return redirect('/index');
+          return redirect('/');
       }
 
        if($a['tel'] == $c['username'] && $hashc==true && $b==null && $a['code']==session('code'))
@@ -94,7 +94,7 @@ class LoginController extends Controller
 
           session(['user'=>$user]);
           
-          return redirect('/index');
+          return redirect('/');
       }
 
     }

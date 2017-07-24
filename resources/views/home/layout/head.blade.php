@@ -86,6 +86,8 @@
                 </a>
                 <span class="clearfix"></span>
             </div>
+            @if(session('user'))
+
             <div id="win-info-guide" class="win hidden" style="opacity: 1; top: 46px;">
                 <div class="mainer">
                     <div class="a">
@@ -97,12 +99,29 @@
                         </div>
                         <span class="clearfix"></span>
                     </div>
-
                     <div class="c">
                         <a href="{{url('/member/info')}}" target="_blank">查看更多</a></div>
                     <div class="tail"></div>
                 </div>
             </div>
+
+            @else
+                 <li class="guide-item guide-user">
+                    <a href="{{url('/member/index')}}"  class="user-avatar item">
+                        <img src="/static/picture/1.png" width="30" height="30"></a>
+
+                        <a href="{{url('/login/login')}}"  class="item user-login">登录/注册</a>
+
+                    <span class="user-message-count hidden"></span>
+                    <div class="guide-item-con">
+                        <p class="clearfix">
+                            <a href="/member/" target="_blank" class="fl user-name"></a>
+                            <a href="{{url('/login/logout')}}" class="fr icon icon-logout user-logout">退出</a>
+                        </p>
+                    </div>
+                </li>
+
+            @endif
             <script>
 
                 $(function(){

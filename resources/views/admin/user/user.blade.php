@@ -21,7 +21,7 @@
             <div class="result_content">
             <h1>用户列表</h1>
                 <b style="color: #808080">提示:</b><span style="color: #ccc">如无任何数据则表示没有查询到相关用户数据!</span>
-                <table class="list_tab">
+                <table class="list_tab" style="width: 1040px;">
                     <tr>                     
                         <th>UID</th>
                         <th>用户</th>
@@ -30,7 +30,7 @@
                         <th>电话</th>
                         <th>积分</th>
                         <th>注册时间</th>
-                        <th>状态</th>
+                        <th>年龄</th>
                         <th>操作</th>
                     </tr>
                     @foreach($user as $k=>$v)
@@ -41,8 +41,8 @@
                         <td>{{$v['name']}}</td>
                         <td>{{$v['tel']}}</td>
                         <td>{{$v['score']}}</td>
-                        <td>{{$v['regtime']}}</td>
-                        <td>{{$v['status']}}</td>
+                        <td>{{date('Y年m月d H时i分s',$v['regtime'])}}</td>
+                        <td>{{$v['age']}}</td>
                         <td>
                             <a href="/admin/user/detail/{{$v['uid']}}" class="list">详情</a>
                             <a href="/admin/user/delete/{{$v['uid']}}" class="list">删除</a>

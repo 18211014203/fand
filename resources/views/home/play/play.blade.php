@@ -71,7 +71,8 @@
      <div class="fl ico">
       <div class="img"></div>
      </div> <span class="sp3 fl" id="shoucang" style="margin:17px 0px 0px 0px">收藏</span> <br/> 
-     <span class="sp4" id="num" style="font-size: 20px;margin:0px -5px 0px 35px">{{$num}}</span></span>
+     <span class="sp4" id="num" style="font-size: 20px;margin:0px -5px 0px 35px">{{$num}}</span>
+    </span>
 
             <script>
             $('#shoucang').click(function(){
@@ -107,7 +108,7 @@
 
 
         <span id="bd_phoneshow" class="phone fl">
-
+    
       </span>
         <span data-status="0" class="banana fl">
 

@@ -27,7 +27,7 @@
         </div>
          <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">密码</label>
-          <input type="text" class="form-control" id="inputSuccess1" style="width:250px"
+          <input type="password" class="form-control" id="inputSuccess1" style="width:250px"
           value="{{ old('password') }}" name="password">
         </div>
          <div class="form-group has-success">

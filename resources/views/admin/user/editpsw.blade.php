@@ -20,20 +20,20 @@
         <!-- 旧密码 -->
         <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">输入旧密码</label>
-          <input type="text" class="form-control" id="old" style="width:250px"
+          <input type="password" class="form-control" id="old" style="width:250px"
           value="" name="oldpassword">
           <p class="old" style="color:red"></p>
         </div>
         <!-- 新密码         -->
          <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">输入新密码</label>
-          <input type="text" class="form-control" id="new" style="width:250px"
+          <input type="password" class="form-control" id="new" style="width:250px"
           value="" name="newpassword">
         </div>
         <!-- 确认新密码 -->
           <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">确认新密码</label>
-          <input type="text" class="form-control" id="news" style="width:250px"
+          <input type="password" class="form-control" id="news" style="width:250px"
           value="" name="newpasswords">
           <p class="news" style="color:red"></p>
         </div>
@@ -44,29 +44,18 @@
       <script type="text/javascript">
 
          $('#old').blur(function() {
+
            var old=$(this).val();
 
-            $.get('/admin/user/old',{'oldpassword':old,'_token':'{{csrf_token()}}','id':"{{ $user['id'] }}"},function(msg){
-                  
-              // alert(msg);
-              layer.open({
-                  type: 1
-                  ,offset: 't' //具体配置参考：offset参数项
-                  ,content: '<div style="padding: 20px 80px;">'+msg+'</div>'
-                  ,btn: '确认'
-                  ,btnAlign: 'c' //按钮居中
-                  ,shade: 0 //不显示遮罩
-                  ,yes: function(){
-                    layer.closeAll();
-                  }
-                });
-
-
-
+      $.get('/admin/user/old',{'oldpassword':old,'id':"{{ $user['id'] }}"},function(msg){
+           
+              alert(msg);
 
             });
-         });
 
+
+         });
+         //判断两次输入的新密码是否相同
          $('#news').blur(function() {
            var newpsw=$(this).val();
            var newpsws=$('#new').val();

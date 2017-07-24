@@ -15,7 +15,7 @@
                     <ul data-category="17" tid="{{$tid}}" class="clearfix">
                         <li class="active">
                             <a href="/v/list123/index.htm" data-cid="123">本区推荐</a></li>
-
+                        @fpr
                     </ul>
                 </div>
             </div>

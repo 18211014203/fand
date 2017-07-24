@@ -28,19 +28,8 @@
 
 					if(msg==1){
 						
-                        layer.open({
-                                      type: 1
-                                      ,offset: 't' //具体配置参考：offset参数项
-                                      ,content: '<div style="padding: 20px 80px;">这个账号已存在,请重新输入一个账号!</div>'
-                                      ,btn: '关闭'
-                                      ,btnAlign: 'c' //按钮居中
-                                      ,shade: 0 //不显示遮罩
-                                      ,yes: function(){
-                                        layer.closeAll();
-                                      }
-                                    });
 
-						// alert('这个账号已存在,请重新输入一个账号!');
+						alert('这个账号已存在,请重新输入一个账号!');
 
 						$('#adminname').val('');
 					}
@@ -51,13 +40,13 @@
 
          <div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">密码</label>
-          <input type="text" class="form-control" id="password" style="width:400px"
+          <input type="password" class="form-control" id="password" style="width:400px"
           value="{{ old('password') }}" name="password" required>
         </div>
 
 		<div class="form-group has-success">
           <label class="control-label" for="inputSuccess1">重复密码</label>
-          <input type="text" class="form-control" id="rpassword" style="width:400px"
+          <input type="password" class="form-control" id="rpassword" style="width:400px"
           value="{{ old('rpassword') }}" name="rpassword" required>
         </div>
 		
@@ -69,18 +58,8 @@
 
 			if(a != b)
 			{
-    layer.open({
-                  type: 1
-                  ,offset: 't' //具体配置参考：offset参数项
-                  ,content: '<div style="padding: 20px 80px;">两次密码不一致,请重新输入!</div>'
-                  ,btn: '关闭'
-                  ,btnAlign: 'c' //按钮居中
-                  ,shade: 0 //不显示遮罩
-                  ,yes: function(){
-                    layer.closeAll();
-                  }
-                });
-				// alert('两次密码不一致,请重新输入!');
+  
+				alert('两次密码不一致,请重新输入!');
 
 				$(this).val('');
 			}

@@ -24,7 +24,7 @@
       
          <div class="form-group has-success">
             <label class="control-label" for="inputSuccess1">密码</label>
-            <input type="text" class="form-control" id="inputSuccess1" style="width:400px"
+            <input type="password" class="form-control" id="inputSuccess1" style="width:400px"
             value="" name="password" id="password" placeholder="不公开">
             @if(session('error'))
                 <p>{{session('error')}}</p>
@@ -33,18 +33,8 @@
         <script>
         $('#password').blur(function(){
           if($(this).val()==''){
-            layer.open({
-                  type: 1
-                  ,offset: 't' //具体配置参考：offset参数项
-                  ,content: '<div style="padding: 20px 80px;">密码不能为空!</div>'
-                  ,btn: '关闭'
-                  ,btnAlign: 'c' //按钮居中
-                  ,shade: 0 //不显示遮罩
-                  ,yes: function(){
-                    layer.closeAll();
-                  }
-                });
-            // alert('密码不能为空!');
+           
+            alert('密码不能为空!');
           }
         });
 

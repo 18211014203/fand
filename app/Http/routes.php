@@ -11,10 +11,10 @@
 |
 */
 
- Route::get('/', function () {
- 	
-     return view('welcome');
- });
+ // Route::get('/', function () {
+ // 	phpinfo();
+ //     return view('welcome');
+ // });
 
 
 // 后台路由
@@ -44,7 +44,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 // 前台路由
 // 首页路由
-Route::get('/index','Home\IndexController@index');
+Route::get('/','Home\IndexController@index');
 // 二级分类展示页路由
 Route::get('/v/{tid}/index','Home\IndexController@vindex');
 // 列表页路由
